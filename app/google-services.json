@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1015329437532",
+    "firebase_url": "https://abiaccinet-c3570.firebaseio.com",
+    "project_id": "abiaccinet-c3570",
+    "storage_bucket": "abiaccinet-c3570.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1015329437532:android:692d7b621ade873c",
+        "android_client_info": {
+          "package_name": "com.ganesh.abiaccinet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1015329437532-gua4kvug6vr1kqu5tnel7grv4nplepp7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ganesh.abiaccinet",
+            "certificate_hash": "34bff87bc5c158608babbb2f2786fb0994067fb9"
+          }
+        },
+        {
+          "client_id": "1015329437532-qpkc41e819pc9qhahvvm7qi8251fjoso.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2g62811cAZgH1qsEjtAlG3k-M0NQhPPA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1015329437532-qpkc41e819pc9qhahvvm7qi8251fjoso.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
