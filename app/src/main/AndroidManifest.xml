@@ -8,6 +8,13 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -16,14 +23,40 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
+        <activity
+            android:name=".LoginActivity"
+            android:label="Login Page">
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="Create account" />
+        <activity
+            android:name=".UserRegistrationActivity"
+            android:label="Create account" />
+        <activity
+            android:name=".ProfileActivity"
+            android:label="AcciNet" />
+        <activity android:name=".AccidentComplain" />
+        <activity
+            android:name=".Pop"
+            android:theme="@style/AppTheme.CustomTheme" />
+        <activity android:name=".RegisteredComplaints" />
+        <activity android:name=".map" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCd3-YGqP0dDHnqM_1GqIjWB7Ed8qnn1_U" />
+
+        <activity
+            android:name=".FullscreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@style/FullscreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

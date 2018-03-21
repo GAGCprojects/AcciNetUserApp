@@ -31,7 +31,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/loginn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="148dp"
@@ -48,6 +48,16 @@
         android:layout_marginTop="44dp"
         android:text="New User or Sign "
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/loginn" />
+
+    <Button
+        android:id="@+id/acc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="36dp"
+        android:text="Acc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signup" />
 
 </android.support.constraint.ConstraintLayout>
