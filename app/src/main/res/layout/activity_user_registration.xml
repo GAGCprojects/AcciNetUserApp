@@ -1,55 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="@drawable/signup_bg"
     tools:context="com.ganesh.abiaccinet.UserRegistrationActivity">
 
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="278dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="140dp"
-        android:ems="10"
-        android:hint="Enter Email Id"
-        android:inputType="textEmailAddress"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:alpha="0.8"
+        app:cardCornerRadius="10dp"
+        android:layout_height="260dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/cardView">
 
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="278dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/edit_bg"
+            android:layout_marginTop="30dp"
+            android:textColor="#ffffff"
+            android:hint="E-mail"
+             android:inputType="text"
+             android:padding="5dp"
+            android:textColorHint="#ffffff"
+            />
 
-    <Button
-        android:id="@+id/create"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="52dp"
-        android:text="Create Account"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/edit_bg"
+            android:layout_marginTop="90dp"
+            android:textColor="#ffffff"
+            android:hint="Password"
+            android:padding="5dp"
+            android:inputType="textPassword"
+            android:textColorHint="#ffffff"
+            android:id="@+id/password"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/edit_bg"
+            android:layout_marginTop="150dp"
+            android:textColor="#ffffff"
+            android:inputType="textPassword"
+            android:hint="confirm Password"
+            android:padding="5dp"
+            android:textColorHint="#ffffff"
+            android:id="@+id/confirmPassword" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/confirmPassword"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="13dp"
+                android:text="Sign up"
+                android:id="@+id/create"
+                android:textColor="#ffffff"
+                android:background="@drawable/btn_bgr"
+                android:textAllCaps="false" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
 
     <TextView
-        android:id="@+id/signin"
-        android:layout_width="295dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="36dp"
-        android:text="Already a user? Sign in"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/create" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/cardView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp"
+        android:text="Register"
+        android:textColor="#ffffff"
+        android:textSize="25dp" />
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -17,9 +18,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button signup;
+    private TextView signup;
     private EditText username, password;
-    private Button login,acc;
+    private Button login;
     private ProgressDialog prog;
     private FirebaseAuth auth;
 
@@ -36,23 +37,24 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         username = (EditText) findViewById(R.id.editText);
         password = (EditText) findViewById(R.id.editText2);
         login = (Button) findViewById(R.id.loginn);
-        signup = (Button) findViewById(R.id.signup);
-        acc = (Button)findViewById(R.id.acc);
+        signup = (TextView) findViewById(R.id.signup);
         prog = new ProgressDialog(this);
+        prog.setMessage("Signing in....");
         login.setOnClickListener(this);
         signup.setOnClickListener(this);
-        acc.setOnClickListener(this);
-    }
-    private void userlogin() {
-        String ema = username.getText().toString().trim();
-        String pass = password.getText().toString().trim();
 
+    }
+
+
+    private void userlogin() {
+        final String ema = username.getText().toString().trim();
+        String pass = password.getText().toString().trim();
+        prog.show();
         if (TextUtils.isEmpty(ema) || TextUtils.isEmpty(pass)) {
             Toast.makeText(this, "Please enter email/password", Toast.LENGTH_SHORT).show();
             return;
         }
-       /* prog.setMessage("Registering User....");
-        prog.show(); */
+
         auth.signInWithEmailAndPassword(ema, pass)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -60,7 +62,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         prog.dismiss();
                         if (task.isSuccessful()){
                             finish();
-                            startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
+                            user mail = new user();
+                            mail.email=ema;
+
+                            startActivity(new Intent(getApplicationContext(),user_profile_activity.class));
                         }
                     }
                 });
@@ -74,9 +79,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             finish();
             Intent i = new Intent(LoginActivity.this, UserRegistrationActivity.class);
             startActivity(i);
-        }
-        if(view==acc){
-            startActivity(new Intent(this,AccidentComplain.class));
         }
     }
 

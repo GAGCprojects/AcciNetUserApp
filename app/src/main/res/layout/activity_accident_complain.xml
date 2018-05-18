@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,151 +9,274 @@
 
     <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:id="@+id/scrollView2">
 
-            <android.support.constraint.ConstraintLayout
-                android:layout_width="380dp"
-                android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="39dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="32dp"
-                    android:text="Land Mark       "
-                    android:textSize="20sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="14dp"
+                android:text="Accident Complaint"
+                android:textColor="#000000"
+                android:id="@+id/txt"
+                android:textSize="25dp" />
 
-                <EditText
-                    android:id="@+id/landmark"
-                    android:layout_width="191dp"
-                    android:layout_height="39dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginTop="32dp"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:textAlignment="center"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <View
+                android:id="@+id/v1"
+                android:layout_width="match_parent"
+                android:background="#50000000"
+                android:layout_below="@+id/txt"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="20dp"
+                android:layout_height="1dp"/>
 
-                <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="36dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="28dp"
-                    android:text="Location       "
-                    android:textSize="20sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-                <TextView
-                    android:id="@+id/loc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="39dp"
-                    android:layout_marginEnd="12dp"
-                    android:layout_marginTop="28dp"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:textAlignment="center"
-                    app:layout_constraintEnd_toStartOf="@+id/loca"
-                    app:layout_constraintTop_toBottomOf="@+id/landmark" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/v1"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:text="Landmark"
+                android:id="@+id/ld"
+                android:textSize="20dp" />
 
-                <ImageView
-                    android:id="@+id/loca"
-                    android:layout_width="47dp"
-                    android:layout_height="39dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginTop="28dp"
-                    android:layout_weight="1"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/landmark"
-                    app:srcCompat="@drawable/location" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/landmark"
+                android:layout_below="@+id/ld"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="20dp"
+                />
 
-                <TextView
-                    android:id="@+id/textView1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="39dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="28dp"
-                    android:text="Description       "
-                    android:textSize="20sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView10" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textSize="20dp"
+                android:layout_below="@+id/landmark"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="15dp"
+                android:id="@+id/ds"
+                />
 
-                <EditText
-                    android:id="@+id/desciption"
-                    android:layout_width="191dp"
-                    android:layout_height="39dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginTop="24dp"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/loc" />
+            <EditText
+                android:id="@+id/desciption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ds"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="20dp"
+                />
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Area"
+               android:textSize="20dp"
+               android:layout_below="@id/desciption"
+               android:layout_marginLeft="15dp"
+               />
 
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="39dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="28dp"
-                    android:text="Highways         "
-                    android:textSize="20sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
-                <TextView
-                    android:id="@+id/nh"
-                    android:layout_width="102dp"
-                    android:layout_height="39dp"
-                    android:layout_marginEnd="88dp"
-                    android:layout_marginTop="28dp"
-                    android:layout_weight="1"
-                    android:text="TextView"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/desciption" />
-
-                <TextView
-                    android:id="@+id/textView6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="39dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="28dp"
-                    android:text="Rate Risk Level: "
-                    android:textSize="20sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-                <RatingBar
-                    android:id="@+id/ratingBar"
-                    android:layout_width="242dp"
-                    android:layout_height="56dp"
-                    android:layout_marginEnd="68dp"
-                    android:layout_marginTop="20dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-                <Button
-                    android:id="@+id/regcom"
+            <RadioGroup
+                android:id="@+id/area"
+                android:layout_width="match_parent"
+                android:layout_below="@id/desciption"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+                <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="72dp"
-                    android:layout_marginTop="40dp"
-                    android:text="Register Complaint"
-                    android:textAlignment="center"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
-            </android.support.constraint.ConstraintLayout>
-        </LinearLayout>
-</ScrollView>
-</android.support.constraint.ConstraintLayout>
+                    android:text="urban"
+                    />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rural" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Accident Type"
+                android:textSize="20dp"
+                android:id="@+id/acc"
+                android:layout_below="@+id/area"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+
+                />
+
+           <RadioGroup
+               android:id="@+id/accType"
+               android:layout_marginTop="10dp"
+               android:gravity="center"
+               android:orientation="horizontal"
+               android:layout_below="@+id/acc"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent">
+               <RadioButton
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Fatal"
+
+                   />
+
+               <RadioButton
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Unhospitalized"
+
+                   />
+
+               <RadioButton
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Hospitalized"
+
+                   />
+           </RadioGroup>
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vehicle"
+                android:textSize="20dp"
+                android:layout_below="@+id/accType"
+                android:layout_marginLeft="15dp"
+                android:id="@+id/vh"
+                />
+
+            <RadioGroup
+                android:id="@+id/vehicle"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/vh"
+                >
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2 wheeler"
+                    />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4 wheeler"/>
+            </RadioGroup>
+        <TextView
+            android:id="@+id/rtype"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Road Name"
+            android:textSize="20dp"
+             android:layout_below="@+id/vehicle"
+            android:layout_marginLeft="15dp"
+            />
+
+            <RadioGroup
+                android:id="@+id/road"
+                android:gravity="center"
+                android:layout_below="@+id/rtype"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NH"
+                    />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SH"
+                    />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Construction"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/road"
+                android:layout_marginLeft="15dp"
+                android:id="@+id/cns"
+                />
+
+            <RadioGroup
+                android:id="@+id/cnsType"
+                android:layout_below="@+id/cns"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yes"
+                    />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No"
+                    />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/curLoc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Current loation"
+                android:textSize="20dp"
+                android:layout_below="@id/cnsType"
+                android:layout_marginTop="10dp"
+                />
+
+            <TextView
+                android:id="@+id/loc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Address"
+                android:textSize="18dp"
+                android:layout_below="@+id/curLoc"
+                android:layout_marginLeft="15dp"
+
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Register"
+                android:id="@+id/regcom"
+                android:layout_below="@+id/loc"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                />
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

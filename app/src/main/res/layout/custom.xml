@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/dispname"
+        android:layout_width="90dp"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="18dp"
+        android:text="Name" />
+
+    <TextView
+        android:id="@+id/name1"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_alignBaseline="@+id/dispname"
+        android:layout_alignBottom="@+id/dispname"
+        android:layout_marginStart="51dp"
+        android:layout_toEndOf="@+id/dispname"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/dispphno"
+        android:layout_width="90dp"
+        android:layout_height="35dp"
+        android:layout_alignStart="@+id/dispname"
+        android:layout_below="@+id/dispname"
+        android:layout_marginTop="28dp"
+        android:text="Phone No." />
+
+    <TextView
+        android:id="@+id/phno1"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_alignStart="@+id/name1"
+        android:layout_alignTop="@+id/dispphno"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/dispaadh"
+        android:layout_width="90dp"
+        android:layout_height="35dp"
+        android:layout_alignStart="@+id/dispphno"
+        android:layout_below="@+id/dispphno"
+        android:layout_marginTop="24dp"
+        android:text="Aadhar" />
+
+    <TextView
+        android:id="@+id/aadh1"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_alignStart="@+id/phno1"
+        android:layout_alignTop="@+id/dispaadh"
+        android:text="TextView" />
+</RelativeLayout>

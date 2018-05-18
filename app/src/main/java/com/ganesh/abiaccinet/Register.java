@@ -5,14 +5,15 @@ package com.ganesh.abiaccinet;
  */
 
 public class Register {
-    private String name,phno,aadhar,uid;
+    public static String name,phno,aadhar,uid,email;
     public Register(){}
-    public Register(String name,String aadhar,String phno){
+    public Register(String name,String aadhar,String phno,String email){
         this.name=name;
         this.aadhar=aadhar;
         this.phno=phno;
+        this.email=email;
     }
-    public String getName() {
+    public  String getName() {
         return name;
     }
     public String getPhno() {
@@ -21,4 +22,5 @@ public class Register {
     public String getAadhar() {
         return aadhar;
     }
+    public String getEm(){ return email; }
 }

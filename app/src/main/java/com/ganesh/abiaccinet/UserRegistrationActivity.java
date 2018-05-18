@@ -1,5 +1,6 @@
 package com.ganesh.abiaccinet;
 
+import android.app.ActionBar;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -20,8 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class UserRegistrationActivity extends AppCompatActivity implements View.OnClickListener{
   private Button buttonRegister;
-  private TextView signin;
-  private EditText email,password;
+  private EditText email,password,confirmPassword;
   private ProgressDialog prog;
   private FirebaseAuth firebaseAuth;
     @Override
@@ -34,16 +34,22 @@ public class UserRegistrationActivity extends AppCompatActivity implements View.
             finish();
             startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
         }
+       // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         buttonRegister=(Button)findViewById(R.id.create);
         email=(EditText)findViewById(R.id.email);
-        signin=(TextView)findViewById(R.id.signin);
         password=(EditText)findViewById(R.id.password);
+        confirmPassword = (EditText)findViewById(R.id.confirmPassword);
         buttonRegister.setOnClickListener(this);
-        signin.setOnClickListener(this);
+
     }
     private void registerUser(){
         String ema=email.getText().toString().trim();
         String pass=password.getText().toString().trim();
+        String cnfPass = confirmPassword.getText().toString();
+        if(!pass.equals(cnfPass)){
+           Toast.makeText(getApplicationContext(),"Password mismatch",Toast.LENGTH_LONG).show();
+           return;
+        }
         if(TextUtils.isEmpty(ema)||TextUtils.isEmpty(pass)){
             Toast.makeText(this,"Please enter email/password",Toast.LENGTH_SHORT).show();
             return;
@@ -72,8 +78,10 @@ public class UserRegistrationActivity extends AppCompatActivity implements View.
         if(view == buttonRegister){
             registerUser();
         }
-        if(view==signin){
-            startActivity(new Intent(this,LoginActivity.class));
-        }
+
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

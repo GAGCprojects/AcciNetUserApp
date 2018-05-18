@@ -7,9 +7,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,44 +23,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RegisteredComplaints extends AppCompatActivity {
-   /*private ListView l;
-   ArrayList<RegisteredComplaints> list;
-   ArrayAdapter<RegisteredComplaints> adapter;
+    private ListView lv;
+    String[] items={"Name","Aadhar","Phone Number"};
    private DatabaseReference db;
    private FirebaseAuth firebaseAuth;
-   private FirebaseDatabase database;*/
+   private FirebaseDatabase database;
+   public ArrayList<String> list = new ArrayList<>();
+   ArrayAdapter<String> adapter;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registered_complaints);
+        lv=(ListView)findViewById(R.id.listview);
 
-        //l=(ListView) findViewById(R.id.listcomplaints);
-      /*  firebaseAuth=FirebaseAuth.getInstance();
-        if(firebaseAuth.getCurrentUser()==null){
-            finish();
-            startActivity(new Intent(this,LoginActivity.class));
-        }
-        database=FirebaseDatabase.getInstance();
-        db=database.getReference("Complaints");
-        list=new ArrayList<>();
-        adapter=new ArrayAdapter<RegisteredComplaints>(this,R.layout.activity_registered_complaints,R.id.listcomplaints);
-       db.addValueEventListener(new ValueEventListener() {
-           @Override
-           public void onDataChange(DataSnapshot dataSnapshot) {
-               for(DataSnapshot ds:dataSnapshot.getChildren()){
+        db= FirebaseDatabase.getInstance().getReference("users");
+        adapter=new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line, list);
+        lv.setAdapter(adapter);
+        /*db.addChildEventListener(new ChildEventListener(){
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot,String s){
 
-               }
-               l.setAdapter(adapter);
-           }
+                    list.add(dataSnapshot.getValue(String.class));
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
 
-           @Override
-           public void onCancelled(DatabaseError databaseError) {
-
-           }
-       })
-         db = FirebaseDatabase.getInstance().getReference("Complaints");
-        FirebaseUser user=firebaseAuth.getCurrentUser();
-        String email=user.getEmail();*/
-
+            }
+        });*/
     }
 }

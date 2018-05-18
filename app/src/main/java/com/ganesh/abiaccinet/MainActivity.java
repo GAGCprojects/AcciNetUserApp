@@ -43,12 +43,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         na=name.getText().toString().trim();
         aa=aadhar.getText().toString().trim();
         ph=phno.getText().toString().trim();
-        Register abi=new Register(na,aa,ph);
         FirebaseUser user=firebaseAuth.getCurrentUser();
+        String email=user.getEmail();
+        Register abi=new Register(na,aa,ph,email);
         db.child(user.getUid()).setValue(abi);
-        Toast.makeText(this,"Details Updated Successfuly",Toast.LENGTH_LONG).show();
         startActivity(new Intent(this,ProfileActivity.class));
-
     }
     @Override
     public void onClick(View view) {
