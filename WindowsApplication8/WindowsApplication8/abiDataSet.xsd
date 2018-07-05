@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="abiDataSet" targetNamespace="http://tempuri.org/abiDataSet.xsd" xmlns:mstns="http://tempuri.org/abiDataSet.xsd" xmlns="http://tempuri.org/abiDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection ConnectionStringObject="server=localhost;user id=root;password=aiypwzqp;database=abi" IsAppSettingsProperty="false" Modifier="Assembly" Name="localhost(abi)1" ParameterPrefix="@" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="gstTableAdapter" GeneratorDataComponentClassName="gstTableAdapter" Name="gst" UserDataComponentName="gstTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="localhost(abi)1" DbObjectName="abi.gst" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `item_name`, `percentage` FROM `gst`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="listTableAdapter" GeneratorDataComponentClassName="listTableAdapter" Name="list" UserDataComponentName="listTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="localhost(abi)1" DbObjectName="abi.list" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `item_name`, `price`, `gst_percentage`, `quantity`, `rate` FROM `list`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="abiDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="abiDataSet" msprop:Generator_UserDSName="abiDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="gst" msprop:Generator_TableClassName="gstDataTable" msprop:Generator_TableVarName="tablegst" msprop:Generator_TablePropName="gst" msprop:Generator_RowDeletingName="gstRowDeleting" msprop:Generator_RowChangingName="gstRowChanging" msprop:Generator_RowEvHandlerName="gstRowChangeEventHandler" msprop:Generator_RowDeletedName="gstRowDeleted" msprop:Generator_UserTableName="gst" msprop:Generator_RowChangedName="gstRowChanged" msprop:Generator_RowEvArgName="gstRowChangeEvent" msprop:Generator_RowClassName="gstRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="list" msprop:Generator_TableClassName="listDataTable" msprop:Generator_TableVarName="tablelist" msprop:Generator_TablePropName="list" msprop:Generator_RowDeletingName="listRowDeleting" msprop:Generator_RowChangingName="listRowChanging" msprop:Generator_RowEvHandlerName="listRowChangeEventHandler" msprop:Generator_RowDeletedName="listRowDeleted" msprop:Generator_UserTableName="list" msprop:Generator_RowChangedName="listRowChanged" msprop:Generator_RowEvArgName="listRowChangeEvent" msprop:Generator_RowClassName="listRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
